@@ -7,3 +7,10 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World! ${{ vars.ENV_NAME }}"
+
+  my-job1:
+    environment: test2
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World! ${{ vars.ENV_NAME }}"
