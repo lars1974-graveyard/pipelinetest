@@ -6,7 +6,7 @@
       required: true
   outputs:
     aks-cluster :
-      value: ${{ steps.random-number-generator.outputs.aks-cluster }}
+      value: ${{ steps.aks-context.outputs.aks-cluster }}
   runs:
     using: "composite"
     steps:
