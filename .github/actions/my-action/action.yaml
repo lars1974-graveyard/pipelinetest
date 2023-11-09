@@ -11,6 +11,6 @@
     using: "composite"
     steps:
       - id: aks-context
-        run: echo "aks-name=$(echo ${{ fromJSON( inputs.cluster-config.aks-name )}})" >> $GITHUB_OUTPUT
+        run: echo "aks-name=$(echo ${{ fromJSON(inputs.cluster-config.aks-name)}})" >> $GITHUB_OUTPUT
         shell: bash
 
