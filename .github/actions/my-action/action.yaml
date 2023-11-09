@@ -10,8 +10,6 @@
   runs:
     using: "composite"
     steps:
-      - run: echo "${{ fromJSON(inputs.azure-context).aks-cluster }}"
-        shell: bash
       - id: aks-context
         run: echo "aks-cluster=$(echo '${{ inputs.azure-context }}' | jq -r '.aksCluster')" >> $GITHUB_OUTPUT
         shell: bash
