@@ -13,6 +13,6 @@
       - run: echo "${{ fromJSON(inputs.azure-context).aks-cluster }}"
         shell: bash
       - id: aks-context
-        run: echo "value=$(echo '${{ inputs.azure-context }}' | jq -r '.aks-cluster')" >> $GITHUB_OUTPUT
+        run: echo "aks-cluster=$(echo '${{ inputs.azure-context }}' | jq -r '.aks-cluster')" >> $GITHUB_OUTPUT
         shell: bash
 
