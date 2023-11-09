@@ -1,16 +1,14 @@
-name: hello-world
-on: push
-jobs:
-  my-job:
-    environment: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: echo "Hello World! ${{ vars.ENV_NAME }}"
+on: [push]
 
-  my-job1:
-    environment: test2
+jobs:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - name: my-step
-        run: echo "Hello World111! ${{ vars.ENV_NAME }}"
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: actions/hello-world-composite-action@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
