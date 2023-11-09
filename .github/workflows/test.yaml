@@ -9,6 +9,6 @@ jobs:
       - id: foo
         uses: ./.github/actions/my-action
         with:
-          who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+          azure-context: ${{ vars.azure-context }}
+      - run: echo aksname ${{ steps.foo.outputs.aks-name }}
         shell: bash
