@@ -11,6 +11,7 @@
     using: "composite"
     steps:
       - run: echo "${{ inputs.azure-context.aks-cluster }}"
+        shell: bash
       - id: aks-context
         run: echo "aks-name=${{ fromJSON(inputs.azure-context.aks-cluster) }}" >> $GITHUB_OUTPUT
         shell: bash
