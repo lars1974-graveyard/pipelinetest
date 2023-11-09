@@ -11,5 +11,5 @@ jobs:
         uses: ./.github/actions/my-action
         with:
           azure-context: ${{ vars.AZURE_CONTEXT }}
-      - run: echo aksname ${{ steps.foo.outputs.aks-name }}
+      - run: echo aksname ${{ steps.foo.outputs.aks-cluster }}
         shell: bash
